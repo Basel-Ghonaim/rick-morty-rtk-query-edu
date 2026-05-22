@@ -6,10 +6,10 @@ export interface AllCharactersResponseDto {
 export interface CharacterDto {
   id: number;
   name: string;
-  status: CharacterStatusDto;
+  status: string;
   species: string;
   type: string;
-  gender: CharacterGenderDto;
+  gender: string;
   origin: {
     name: string;
     url: string;
@@ -30,7 +30,3 @@ export interface CharacterInfoDto {
   next: string | null;
   prev: string | null;
 }
-
-export type CharacterGenderDto = "Female" | "Male" | "Genderless" | "Unknown";
-
-export type CharacterStatusDto = "Alive" | "Dead" | "Unknown";
