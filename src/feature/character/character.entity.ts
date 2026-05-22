@@ -1,10 +1,12 @@
-export interface AllCharacterResponse {
+import type { CharacterGender, CharacterStatus } from "./character.types";
+
+export interface CharactersResponse {
   results: Character[];
-  info: AllCharacterInfoEntity;
+  info: CharacterInfo;
 }
 
-export interface AllCharacterInfoEntity {
-  countOfEntities: number;
+export interface CharacterInfo {
+  count: number;
   totalPages: number;
   nextPage: string | null;
   prevPage: string | null;
@@ -17,24 +19,16 @@ export interface Character {
   species: string;
   type: string;
   gender: CharacterGender;
-  originLocation: CharacterLocation;
-  currentLocation: CharacterLocation;
+  originLocation: Location;
+  currentLocation: Location;
   image: string;
   episodeUrls: string[];
   url: string;
   createdAt: string;
 }
 
-export type CharacterStatus = "Alive" | "Dead" | "Unknown";
-
-export type CharacterGender = "Female" | "Male" | "Genderless" | "Unknown";
-
-export interface CharacterLocation {
+export interface Location {
   name: string;
   url: string;
 }
 
-export interface CharacterOrigin {
-  name: string;
-  url: string;
-}
