@@ -25,6 +25,7 @@ export interface Character {
   episodeUrls: string[];
   url: string;
   createdAt: string;
+  created?: string;
 }
 
 export interface Location {
